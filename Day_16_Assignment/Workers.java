@@ -130,4 +130,48 @@ public class Workers implements Comparable<Workers>{
 		
 		}
 }
+
+
+
+
+
+//output:
+/**
+ENTER THE WORKERS Details:1
+ENTER THE WORKERS ID:
+123
+ENTER THE WORKERS NAME:
+JIDDESH
+ENTER THE WORKERS SALARY:
+7.2
+DO YOU ADD MORE Workers:
+yes or no
+yes
+ENTER THE WORKERS Details:2
+ENTER THE WORKERS ID:
+345
+ENTER THE WORKERS NAME:
+RAJESHREE
+ENTER THE WORKERS SALARY:
+7.0
+DO YOU ADD MORE Workers:
+yes or no
+yes
+ENTER THE WORKERS Details:3
+ENTER THE WORKERS ID:
+567
+ENTER THE WORKERS NAME:
+AKSHATA
+ENTER THE WORKERS SALARY:
+7.2
+DO YOU ADD MORE Workers:
+yes or no
+no
+Workers DETAILS:
+-------------------------------------------------------
+Workers [ID=345, NAME=RAJESHREE, SALARY=7.0]
+Workers [ID=567, NAME=AKSHATA, SALARY=7.2]
+Workers [ID=123, NAME=JIDDESH, SALARY=7.2]
+
+*/
 	
