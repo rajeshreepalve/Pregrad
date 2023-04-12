@@ -1,0 +1,171 @@
+Create table STUIDENT and insert the following data :-
+FIELD DATA TYPE
+NAME VARCHAR(20)
+ROLLNO INT
+BRANCH VARCHAR2(20)
+CITY VARCHAR2(20)
+
+
+
+
+mysql> create table STUDENTS(NAME varchar(20),ROLLNO int,BRANCH varchar(20),CITY varchar(20));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO STUDENTS VALUES('VIJAYA',150,'CSE','CHENNAI');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENTS VALUES('SITA',202,'ETC','KOLKATA');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENTS VALUES('RAVI',300,'EEE','DELHI');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENTS VALUES('BASU',165,'ETC','CHENNAI');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENTS VALUES('RASMI',107,'ETC','RKL');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENTS VALUES('KARAN',111,'CSE','CTC');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENTS VALUES('REKHA',117,'BME','BBSR');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM STUDENTS;
++--------+--------+--------+---------+
+| NAME   | ROLLNO | BRANCH | CITY    |
++--------+--------+--------+---------+
+| VIJAYA |    150 | CSE    | CHENNAI |
+| SITA   |    202 | ETC    | KOLKATA |
+| RAVI   |    300 | EEE    | DELHI   |
+| BASU   |    165 | ETC    | CHENNAI |
+| RASMI  |    107 | ETC    | RKL     |
+| KARAN  |    111 | CSE    | CTC     |
+| REKHA  |    117 | BME    | BBSR    |
++--------+--------+--------+---------+
+7 rows in set (0.00 sec)
+
+
+1. Count the number of students of each department.
+
+mysql> SELECT BRANCH, COUNT(*)  FROM STUDENTS  GROUP BY BRANCH;
++--------+----------+
+| BRANCH | COUNT(*) |
++--------+----------+
+| CSE    |        2 |
+| ETC    |        3 |
+| EEE    |        1 |
+| BME    |        1 |
++--------+----------+
+4 rows in set (0.05 sec)
+
+
+
+
+
+
+
+2. Count the number of students of each department where the department name starts with ‘E’.
+mysql> SELECT  COUNT(*)  FROM STUDENTS WHERE BRANCH LIKE "E%" ;
++----------+
+| COUNT(*) |
++----------+
+|        4 |
++----------+
+1 row in set (0.01 sec)
+
+
+
+
+
+3. Add a field called MARKS to the table STUDENT which can hold a number upto 8 digit length.
+mysql> ALTER TABLE STUDENTS ADD MARKS int;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM STUDENTS;
++--------+--------+--------+---------+-------+
+| NAME   | ROLLNO | BRANCH | CITY    | MARKS |
++--------+--------+--------+---------+-------+
+| VIJAYA |    150 | CSE    | CHENNAI |  NULL |
+| SITA   |    202 | ETC    | KOLKATA |  NULL |
+| RAVI   |    300 | EEE    | DELHI   |  NULL |
+| BASU   |    165 | ETC    | CHENNAI |  NULL |
+| RASMI  |    107 | ETC    | RKL     |  NULL |
+| KARAN  |    111 | CSE    | CTC     |  NULL |
+| REKHA  |    117 | BME    | BBSR    |  NULL |
++--------+--------+--------+---------+-------+
+7 rows in set (0.00 sec)
+
+
+
+
+
+4. Modify the field :”NAME” of the table STUDENT to hold a maximum of 25 character.
+mysql> ALTER TABLE STUDENTS modify COLUMN NAME varchar(25);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+
+
+5. Delete all rows from the table STUDENT where branch is ETC.
+
+mysql> DELETE FROM STUDENTS WHERE BRANCH='ETC';
+Query OK, 3 rows affected (0.01 sec)
+
+mysql> SELECT * FROM STUDENTS;
++--------+--------+--------+---------+-------+
+| NAME   | ROLLNO | BRANCH | CITY    | MARKS |
++--------+--------+--------+---------+-------+
+| VIJAYA |    150 | CSE    | CHENNAI |  NULL |
+| RAVI   |    300 | EEE    | DELHI   |  NULL |
+| KARAN  |    111 | CSE    | CTC     |  NULL |
+| REKHA  |    117 | BME    | BBSR    |  NULL |
++--------+--------+--------+---------+-------+
+4 rows in set (0.00 sec)
+
+
+
+
+
+6. Rename the table STUDENTS to STUDINFORMATION.
+
+mysql> ALTER TABLE  STUDENTS RENAME TO STUDENTSINFORMATION;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>  SELECT * FROM STUDENTSINFORMATION;
++--------+--------+--------+---------+-------+
+| NAME   | ROLLNO | BRANCH | CITY    | MARKS |
++--------+--------+--------+---------+-------+
+| VIJAYA |    150 | CSE    | CHENNAI |  NULL |
+| RAVI   |    300 | EEE    | DELHI   |  NULL |
+| KARAN  |    111 | CSE    | CTC     |  NULL |
+| REKHA  |    117 | BME    | BBSR    |  NULL |
++--------+--------+--------+---------+-------+
+4 rows in set (0.01 sec)
+
+
+
+
+
+
+7. Delete all the data part from the table STUDENT.
+
+mysql> DELETE FROM STUDENTSINFORMATION;
+Query OK, 4 rows affected (0.01 sec)
+
+
+
+
+
+
+
+
+
+8. Destroy the table STUDENT.
+
+mysql> DROP TABLE STUDENTSINFORMATION;
+Query OK, 0 rows affected (0.02 sec)
